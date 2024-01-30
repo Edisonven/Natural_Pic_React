@@ -12,7 +12,6 @@ h1 {
   margin-bottom: 0;
 }
 
-
 /* Navbar */
 a {
   text-decoration: none;
@@ -23,6 +22,10 @@ a {
   background: #43a047;
   padding: 20px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 /* gallery */
