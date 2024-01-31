@@ -3,9 +3,11 @@ import Navbar from "./components/Navbar";
 import Favorites from "./views/Favorites";
 import Home from "./views/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {array} from "./components/array"
 
-const PHOTO_URL = "public/photos.json";
-console.log(PHOTO_URL);
+const PHOTO_URL = array;
+
+console.log(PHOTO_URL)
 
 const App = () => {
   return (
