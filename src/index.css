@@ -42,6 +42,9 @@ a {
 }
 .favorites__title {
   text-align: center;
+  margin: 20px 0;
+  color: #43a047;
+  font-family: "Maitree", serif;
 }
 .img__container {
   position: relative;
