@@ -3,13 +3,25 @@ import Navbar from "./components/Navbar";
 import Favorites from "./views/Favorites";
 import Home from "./views/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {array} from "./components/array"
+import { useEffect, useState } from "react";
 
-const PHOTO_URL = array;
-
-console.log(PHOTO_URL)
+const PHOTO_URL = "/photos.json";
 
 const App = () => {
+  const [appiData, setApiData] = useState([]);
+
+  const getInfoApi = async () => {
+    const respuesta = await fetch(PHOTO_URL);
+    const { photos } = await respuesta.json();
+    setApiData(photos);
+  };
+
+  useEffect(() => {
+    getInfoApi();
+  }, []);
+
+  console.log(appiData);
+
   return (
     <div>
       <Navbar />

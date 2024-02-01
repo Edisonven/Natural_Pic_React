@@ -33,7 +33,9 @@ a {
   display: grid;
   gap: 10px;
 }
-
+.gallery__title {
+  text-align: center;
+}
 .grid-columns-5 {
   grid-template-columns: repeat(5, 1fr);
 }
