@@ -14,8 +14,6 @@ const Gallery = () => {
     setApiData(newData);
   };
 
-  console.log(apiData);
-
   return (
     <div className="gallery grid-columns-5 p-3">
       {apiData.map((imagen, index) => (
