@@ -7,10 +7,10 @@ const Gallery = () => {
   const { apiData, setApiData } = useContext(GalleryContext);
 
   //Función que se llama al hacer click en la imagen según su índice, y cambia la propiedad liked a true o false según el click
-  const handleImageClick = (index) => {
+  const handleImageClick = (i) => {
     //constante que almacena una copia del arrelo original, además crea una nueva versión del objeto con sus propiedades y se cambia la propiedad liked al inverso del valor actual (true o false)
     const newData = [...apiData];
-    newData[index] = { ...newData[index], liked: !newData[index].liked };
+    newData[i] = { ...newData[i], liked: !newData[i].liked };
     //actualiza el estado en base a las funciones disparadas con el click
     setApiData(newData);
   };
@@ -18,11 +18,11 @@ const Gallery = () => {
   return (
     <div className="gallery grid-columns-5 p-3">
       {/* Se hace un mapeo del estado global actual */}
-      {apiData.map((imagen, index) => (
+      {apiData.map((imagen, i) => (
         <div key={imagen.id} className="img__container">
           <img
             //funcion llamada creada más arriba que ejecuta los cambios y actualiza el estado
-            onClick={() => handleImageClick(index)}
+            onClick={() => handleImageClick(i)}
             src={imagen.src.original}
             alt=""
             className="img"
@@ -32,7 +32,7 @@ const Gallery = () => {
           {/* Componente que recibe la propiedad liked y la funcion handleImageClick para cambiar el ícono de color segun la propiedad liked (true, false)*/}
           <IconHeart
             liked={imagen.liked}
-            onHeartClick={() => handleImageClick(index)}
+            handleImageClick={() => handleImageClick(i)}
           />
         </div>
       ))}
