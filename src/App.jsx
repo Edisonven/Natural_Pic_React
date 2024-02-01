@@ -3,32 +3,18 @@ import Navbar from "./components/Navbar";
 import Favorites from "./views/Favorites";
 import Home from "./views/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
-
-const PHOTO_URL = "/photos.json";
+import GalleryProvider from "./context/GalleryContext";
 
 const App = () => {
-  const [appiData, setApiData] = useState([]);
-
-  const getInfoApi = async () => {
-    const respuesta = await fetch(PHOTO_URL);
-    const { photos } = await respuesta.json();
-    setApiData(photos);
-  };
-
-  useEffect(() => {
-    getInfoApi();
-  }, []);
-
-  console.log(appiData);
-
   return (
     <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favoritos" element={<Favorites />} />
-      </Routes>
+      <GalleryProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favoritos" element={<Favorites />} />
+        </Routes>
+      </GalleryProvider>
     </div>
   );
 };
