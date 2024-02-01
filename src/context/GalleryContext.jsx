@@ -5,7 +5,7 @@ export const GalleryContext = createContext();
 const PHOTO_URL = "/photos.json";
 
 const GalleryProvider = ({ children }) => {
-  const [appiData, setApiData] = useState([]);
+  const [apiData, setApiData] = useState([]);
 
   const getInfoApi = async () => {
     const respuesta = await fetch(PHOTO_URL);
@@ -18,7 +18,7 @@ const GalleryProvider = ({ children }) => {
   }, []);
 
   return (
-    <GalleryContext.Provider value={{ appiData, setApiData }}>
+    <GalleryContext.Provider value={{ apiData, setApiData }}>
       {children}
     </GalleryContext.Provider>
   );
