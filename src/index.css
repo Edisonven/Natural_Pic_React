@@ -32,9 +32,27 @@ a {
 .gallery {
   display: grid;
   gap: 10px;
+  margin: 0 50px;
 }
 .gallery__title {
   text-align: center;
+}
+.img__container {
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 300px;
+}
+.img__description {
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%);
+  width: 100%;
 }
 .grid-columns-5 {
   grid-template-columns: repeat(5, 1fr);
