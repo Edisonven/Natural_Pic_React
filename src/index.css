@@ -27,8 +27,12 @@ a {
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
-
+.navbar__link:hover {
+  opacity: 70%;
+}
 /* gallery */
 .gallery {
   display: grid;
